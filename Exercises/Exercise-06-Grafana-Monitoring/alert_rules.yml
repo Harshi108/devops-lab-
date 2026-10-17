@@ -1,0 +1,11 @@
+﻿groups:
+  - name: quick-commerce-alerts
+    rules:
+      - alert: HighPendingOrders
+        expr: quickcommerce_pending_orders > 50
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High number of pending orders"
+          description: "Pending orders have exceeded 50 for more than one minute."
